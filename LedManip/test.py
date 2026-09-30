@@ -1,5 +1,10 @@
 from machine import Pin
 
-LED = Pin(16, Pin.OUT)
+LEDPIN = 16
+BUTTPIN = 18
 
-LED.value(1)
+LED = Pin(LEDPIN, Pin.OUT)
+BUTTON = Pin(BUTTPIN, Pin.IN)
+
+while(1):
+    LED.value(BUTTON.value())
